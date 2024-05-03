@@ -1,11 +1,11 @@
 # test3-project
 # Team Members:
-              1-Amna Ali
-              2-Bassant Ehab
-              3-Rawan Mohamed 
-              4-Taqa Sameh 
-              5-Mariam Reda
-              6-Nermen Ahmed
+              1-Amna Ali Abd-Alwahab
+              2-Bassant Ehab Saber 
+              3-Rawan Mohamed Fathy
+              4-Taqa Sameh Salah
+              5-Mariam Reda Ibrahim
+              6-Nermeen Ahmed Fouad
 # X-O Game
 Tiva c launch pad board with Nokia5110 screen project
 
