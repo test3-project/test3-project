@@ -1,0 +1,12 @@
+.\main.o: main.c
+.\main.o: Random.h
+.\main.o: ./images/TExaS.h
+.\main.o: ./images/GAME.h
+.\main.o: ./images/Types.h
+.\main.o: ./images/tm4c123gh6pm11.h
+.\main.o: ./images/../gpio.h
+.\main.o: ..\tm4c123gh6pm11.h
+.\main.o: ./images/../Nokia5110.h
+.\main.o: uart.h
+.\main.o: interrupt.h
+.\main.o: timer.h

@@ -1,0 +1,12 @@
+.\spaceinvaders.o: SpaceInvaders.c
+.\spaceinvaders.o: Random.h
+.\spaceinvaders.o: TExaS.h
+.\spaceinvaders.o: GAME.h
+.\spaceinvaders.o: Types.h
+.\spaceinvaders.o: ..\tm4c123gh6pm11.h
+.\spaceinvaders.o: gpio.h
+.\spaceinvaders.o: Nokia5110.h
+.\spaceinvaders.o: timer.h
+.\spaceinvaders.o: drawings.h
+.\spaceinvaders.o: uart.h
+.\spaceinvaders.o: interrupt.h
