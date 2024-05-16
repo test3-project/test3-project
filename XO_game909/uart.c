@@ -2,7 +2,7 @@
 /**********************************************************************************************************
  * File Name: uart.c
  *
- * Team Members : Toqa Sameh - Mariam Reda - Nermeen Ahmed - Amna Ali - Bassant Ehab - Rawan Mohamed 
+ * Team Members : Toqa Sameh- Mariam Reda - Nermeen Ahmed - Amna Ali - Bassant Ehab - Rawan Mohamed 
  *********************************************************************************************************/
  
 #include "UART.h"
@@ -57,6 +57,13 @@ void UART_OutString(unsigned char * buffer){//function to output string on termi
 	   UART_OutChar(*(buffer++));
 	 }
 }
+
+
+
+
+
+
+
 
 
 
