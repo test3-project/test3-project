@@ -187,7 +187,19 @@ void GPIO_SelectInterruptEvent(GPIO_PORT portNum, GPIO_PIN pinNum, uint8 Event);
  ************************************************************************************/
 void GPIO_InterruptBothEdges(GPIO_PORT portNum, GPIO_PIN pinNum, uint8 BothEdges);
 void EnableInterrupts(void);  // Enable interrupts
+/************************************************************************************
+ * Function Name: PORTB Initialization 
+ * Parameters   : None
+ * Return value : None
+ * Description  : function to initialize PortB
+ ************************************************************************************/
 void PortB_Init(void);
+/************************************************************************************
+ * Function Name: PORTF Initialization 
+ * Parameters   : None
+ * Return value : None
+ * Description  : function to initialize Portf
+ ************************************************************************************/
 void PortF_Init(void);
 
 #endif
