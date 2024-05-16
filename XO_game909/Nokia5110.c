@@ -118,20 +118,7 @@ enum typeOfWrite{
 //         message  8-bit code to transmit
 // outputs: none
 // assumes: SSI0 and port A have already been initialized and enabled
-void static lcdwrite(enum typeOfWrite type, char message){
-  if(type == COMMAND){
-                                        // wait until SSI0 not busy/transmit FIFO empty
-    while((SSI0_SR_R&SSI_SR_BSY)==SSI_SR_BSY){};
-    DC = DC_COMMAND;
-    SSI0_DR_R = message;                // command out
-                                        // wait until SSI0 not busy/transmit FIFO empty
-    while((SSI0_SR_R&SSI_SR_BSY)==SSI_SR_BSY){};
-  } else{
-    while((SSI0_SR_R&SSI_SR_TNF)==0){}; // wait until transmit FIFO not full
-    DC = DC_DATA;
-    SSI0_DR_R = message;                // data out
-  }
-}
+
 
 //********Nokia5110_Init*****************
 // Initialize Nokia 5110 48x84 LCD by sending the proper
@@ -222,47 +209,6 @@ void Nokia5110_OutString(char *ptr){
   }
 }
 
-//********Nokia5110_OutUDec*****************
-// Output a 16-bit number in unsigned decimal format with a
-// fixed size of five right-justified digits of output.
-// Inputs: n  16-bit unsigned number
-// Outputs: none
-// assumes: LCD is in default horizontal addressing mode (V = 0)
-void Nokia5110_OutUDec(unsigned short n){
-  if(n < 10){
-    Nokia5110_OutString("    ");
-    Nokia5110_OutChar(n+'0'); /* n is between 0 and 9 */
-  } else if(n<100){
-    Nokia5110_OutString("   ");
-    Nokia5110_OutChar(n/10+'0'); /* tens digit */
-    Nokia5110_OutChar(n%10+'0'); /* ones digit */
-  } else if(n<1000){
-    Nokia5110_OutString("  ");
-    Nokia5110_OutChar(n/100+'0'); /* hundreds digit */
-    n = n%100;
-    Nokia5110_OutChar(n/10+'0'); /* tens digit */
-    Nokia5110_OutChar(n%10+'0'); /* ones digit */
-  }
-  else if(n<10000){
-    Nokia5110_OutChar(' ');
-    Nokia5110_OutChar(n/1000+'0'); /* thousands digit */
-    n = n%1000;
-    Nokia5110_OutChar(n/100+'0'); /* hundreds digit */
-    n = n%100;
-    Nokia5110_OutChar(n/10+'0'); /* tens digit */
-    Nokia5110_OutChar(n%10+'0'); /* ones digit */
-  }
-  else {
-    Nokia5110_OutChar(n/10000+'0'); /* ten-thousands digit */
-    n = n%10000;
-    Nokia5110_OutChar(n/1000+'0'); /* thousands digit */
-    n = n%1000;
-    Nokia5110_OutChar(n/100+'0'); /* hundreds digit */
-    n = n%100;
-    Nokia5110_OutChar(n/10+'0'); /* tens digit */
-    Nokia5110_OutChar(n%10+'0'); /* ones digit */
-  }
-}
 
 //********Nokia5110_SetCursor*****************
 // Move the cursor to the desired X- and Y-position.  The
@@ -293,19 +239,6 @@ void Nokia5110_Clear(void){
   Nokia5110_SetCursor(0, 0);
 }
 
-//********Nokia5110_DrawFullImage*****************
-// Fill the whole screen by drawing a 48x84 bitmap image.
-// inputs: ptr  pointer to 504 byte bitmap
-// outputs: none
-// assumes: LCD is in default horizontal addressing mode (V = 0)
-void Nokia5110_DrawFullImage(const char *ptr){
-  int i;
-  Nokia5110_SetCursor(0, 0);
-  for(i=0; i<(MAX_X*MAX_Y/8); i=i+1){
-    lcdwrite(DATA, ptr[i]);
-  }
-}
-char Screen[SCREENW*SCREENH/8]; // buffer stores the next image to be printed on the screen
 
 //********Nokia5110_PrintBMP*****************
 // Bitmaps defined above were created for the LM3S1968 or
