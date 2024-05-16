@@ -4,10 +4,10 @@
  *
  * Team Members : Toqa Sameh - Mariam Reda - Nermeen Ahmed - Amna Ali - Bassant Ehab - Rawan Mohamed 
  *********************************************************************************************************/
-
+/* File Guarding */
 #ifndef GPIO_H_
 #define GPIO_H_
-
+/********************* INCLUDES ****************************************************************************/
 #include "./images/types.h"
 #include "tm4c123gh6pm11.h"
 
@@ -76,8 +76,7 @@ typedef enum
     BOTH_EDGE
 }BOTH_EDGE_SELECT;
 
-
-
+/******************* Functions ProtoTypes *******************************************/
 
  /************************************************************************************
  * function Name : GPIO_SetPinDirection
@@ -132,7 +131,6 @@ void GPIO_PullUp(GPIO_PORT portNum, GPIO_PIN pinNum, uint8  PU_Config);
  ************************************************************************************/
 void GPIO_PullDown(GPIO_PORT portNum, GPIO_PIN pinNum, uint8  PD_Config);
 
- 
  /************************************************************************************
  * Function Name : GPIO_SelectAlterFunction
  * Parameters    : Port - PinNumber 
@@ -140,7 +138,6 @@ void GPIO_PullDown(GPIO_PORT portNum, GPIO_PIN pinNum, uint8  PD_Config);
  * Description   : function to set the alternate function for pins
  ************************************************************************************/
 void GPIO_SelectAlterFunction(GPIO_PORT portNum, GPIO_PIN pinNum);
-
 
 /************************************************************************************
  * Function Name  :GPIO_EnableInterrupt
@@ -150,7 +147,6 @@ void GPIO_SelectAlterFunction(GPIO_PORT portNum, GPIO_PIN pinNum);
  ************************************************************************************/
 void GPIO_EnableInterrupt(GPIO_PORT portNum, GPIO_PIN pinNum);
 
-
 /************************************************************************************
  * Function Name  :GPIO_DisableInterrupt
  * Parameters    : Port - PinNumber
@@ -158,7 +154,6 @@ void GPIO_EnableInterrupt(GPIO_PORT portNum, GPIO_PIN pinNum);
  * Description   : function to Disable interrupts for pins
  ************************************************************************************/
 void GPIO_DisableInterrupt(GPIO_PORT portNum, GPIO_PIN pinNum);
-
 
 /************************************************************************************
  * Function Name   : GPIO_SelectInterruptSense
@@ -168,7 +163,6 @@ void GPIO_DisableInterrupt(GPIO_PORT portNum, GPIO_PIN pinNum);
  ************************************************************************************/
 void GPIO_SelectInterruptSense(GPIO_PORT portNum, GPIO_PIN pinNum, uint8 Sense);
 
-
 /************************************************************************************
  * Function Name :GPIO_ClearInterrupts
  * Parameters   : Port - PinNumber 
@@ -177,7 +171,6 @@ void GPIO_SelectInterruptSense(GPIO_PORT portNum, GPIO_PIN pinNum, uint8 Sense);
  ************************************************************************************/
 void GPIO_ClearInterrupt(GPIO_PORT portNum, GPIO_PIN pinNum);
 
-
 /************************************************************************************
  * Function Name:GPIO_SelectInterruptEvent
  * Parameters   : Port - PinNumber 
@@ -185,8 +178,6 @@ void GPIO_ClearInterrupt(GPIO_PORT portNum, GPIO_PIN pinNum);
  * Description  : function to Select Interrup Event for pins
  ************************************************************************************/
 void GPIO_SelectInterruptEvent(GPIO_PORT portNum, GPIO_PIN pinNum, uint8 Event);
- 
- 
  
  /************************************************************************************
  * Function Name:GPIO_InterruptBothEdges
