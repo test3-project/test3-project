@@ -204,13 +204,6 @@ void Nokia5110_OutChar(unsigned char data);
 // assumes: LCD is in default horizontal addressing mode (V = 0)
 void Nokia5110_OutString(char *ptr);
 
-//********Nokia5110_OutUDec*****************
-// Output a 16-bit number in unsigned decimal format with a
-// fixed size of five right-justified digits of output.
-// Inputs: n  16-bit unsigned number
-// Outputs: none
-// assumes: LCD is in default horizontal addressing mode (V = 0)
-void Nokia5110_OutUDec(unsigned short n);
 
 //********Nokia5110_SetCursor*****************
 // Move the cursor to the desired X- and Y-position.  The
@@ -228,12 +221,6 @@ void Nokia5110_SetCursor(unsigned char newX, unsigned char newY);
 // outputs: none
 void Nokia5110_Clear(void);
 
-//********Nokia5110_DrawFullImage*****************
-// Fill the whole screen by drawing a 48x84 bitmap image.
-// inputs: ptr  pointer to 504 byte bitmap
-// outputs: none
-// assumes: LCD is in default horizontal addressing mode (V = 0)
-void Nokia5110_DrawFullImage(const char *ptr);
 
 //********Nokia5110_PrintBMP*****************
 // Bitmaps defined above were created for the LM3S1968 or
